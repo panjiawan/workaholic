@@ -19,3 +19,16 @@
 
 # Go workspace file
 go.work
+
+.vscode/
+.idea/
+
+vendor/
+dev_tool/
+etc/
+build/*
+
+dump.rdb
+
+logs/
+uploads/
