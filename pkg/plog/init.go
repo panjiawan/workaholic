@@ -54,7 +54,7 @@ func Start(path, name string, debug bool, stdout bool) {
 func getWriter(filename string) zapcore.WriteSyncer {
 	writeCfg := &lumberjack.Logger{
 		Filename: filename,
-		MaxSize:  100,
+		MaxSize:  100, //以MB为单位
 	}
 	writer := zapcore.AddSync(writeCfg)
 
