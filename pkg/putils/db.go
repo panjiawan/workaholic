@@ -58,6 +58,10 @@ func BuildCondition(where map[string]interface{}) (whereSql string,
 				whereSql += fmt.Sprint(field, " in (?)")
 				values = append(values, value)
 				break
+			case "notin":
+				whereSql += fmt.Sprint(field, " not in (?)")
+				values = append(values, value)
+				break
 			case "like":
 				whereSql += fmt.Sprint(field, " like ?")
 				values = append(values, value)

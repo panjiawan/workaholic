@@ -52,3 +52,11 @@ func BytesToUInt16(bys []byte) int {
 	binary.Read(bytebuff, binary.BigEndian, &data)
 	return int(data)
 }
+
+//func ByteSlice2string(b []byte) string {
+//	return unsafe.String(&b[0], len(b))
+//}
+//
+//func String2ByteSlice(s string) []byte {
+//	return unsafe.Slice(unsafe.StringData(s), len(s))
+//}
