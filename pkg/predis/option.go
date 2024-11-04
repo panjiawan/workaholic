@@ -41,3 +41,9 @@ func WithDialTimeout(timeout time.Duration) Option {
 		s.option.DialTimeout = timeout
 	}
 }
+
+func WithDB(db int) Option {
+	return func(s *Service) {
+		s.option.DB = db
+	}
+}
