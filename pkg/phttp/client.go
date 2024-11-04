@@ -33,10 +33,13 @@ func Request(url, method string, param map[string]string, header map[string]stri
 	}
 	req.SetRequestURI(url)
 	req.Header.SetMethod(method)
-	req.Header.SetContentType("application/x-www-form-urlencoded")
 	for k, v := range header {
 		req.Header.Set(k, v)
 	}
+	if _, ok := header["contentType"]; !ok {
+		req.Header.SetContentType("application/x-www-form-urlencoded")
+	}
+
 	req.SetBody(args.QueryString())
 
 	client := &fasthttp.Client{}
